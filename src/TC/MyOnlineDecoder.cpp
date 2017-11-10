@@ -49,9 +49,9 @@ void MyOnlineDecoder::parseAndDecode(std::ifstream *ifp, std::ofstream *ofp) {
 	int8_t i;						// to be used for iterations
 	uint8_t bytes[8];				// to store data loaded from file
 									// TODO: only 4 bytes are needed;
-	uint8_t prefix;					// Indicates the prefix encoded in beginning of
+	uint8_t prefix,					// Indicates the prefix encoded in beginning of
 									// first byte of every encoded delta;
-	uint8_t bufferedMarker;			// Indicates if some data was appended to long byte
+		bufferedMarker;				// Indicates if some data was appended to long byte
 									// if > 0, 00, 01 & 11 indicates different type of buffering
 	uint64_t number;				// to store current number
 
