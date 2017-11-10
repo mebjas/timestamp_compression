@@ -65,7 +65,7 @@ DeltaValue	Frequency
 28              1
 32              2
 ```
-![Plot](./plots/plot01.png)
+![Plot](./plots/plot01.png)<br>
 _Figure 1: Distribution of delta values_
 
 So majorly `(> 50%)` is 0 delta or 1 delta. Since the smallest size of data that can be written to a file is 1 Byte, we'd encode data in byte by byte format; We'd want to store delta values with high distribution in smaller size chunks to reduce size; So I'll encode them with bit prefixes something like this:
@@ -136,7 +136,7 @@ Using Excel here's the histogram based on no of bits needed to store the delta v
 | 30          | 536870912  | 0         | 0           |   |
 | 31          | 1073741824 | 0         | 0           |   |
 
-![plot 02](./plots/plot02.png)
+![plot 02](./plots/plot02.png)<br>
 _Figure 2: histogram of decimal values_
 
 So >50% of delta is between [0,1]. And a good portion of them lie between [2, 14] bits needed; So if we encode it as following:
